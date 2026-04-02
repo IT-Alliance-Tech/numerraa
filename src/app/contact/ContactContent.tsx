@@ -1,0 +1,421 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle2,
+  ChevronDown,
+  ArrowRight,
+  Clock,
+  Shield,
+  Sparkles,
+} from "lucide-react";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Badge } from "@/components/ui/Badge";
+
+const faqs = [
+  {
+    question: "How quickly can you onboard my business?",
+    answer:
+      "We typically complete onboarding within 5-7 business days, depending on the complexity of your financial setup.",
+  },
+  {
+    question: "Do you work with startups or only established businesses?",
+    answer:
+      "We work with businesses at every stage — from early-stage startups to well-established SMEs.",
+  },
+  {
+    question: "What industries do you serve?",
+    answer:
+      "We serve clients across IT, e-commerce, healthcare, manufacturing, professional services, and more.",
+  },
+  {
+    question: "Can I switch from my current accountant mid-year?",
+    answer:
+      "Absolutely. We handle the transition seamlessly, including collecting records from your previous provider.",
+  },
+];
+
+const trustPoints = [
+  { icon: Shield, text: "Trusted by 500+ Businesses" },
+  { icon: Clock, text: "Average 24-Hour Response Time" },
+  { icon: Sparkles, text: "98% Client Satisfaction" },
+];
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-border last:border-b-0">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between py-5 text-left group"
+      >
+        <span className="text-base font-medium text-text-primary group-hover:text-indigo-deep transition-colors pr-4">
+          {question}
+        </span>
+        <ChevronDown
+          size={20}
+          className={`text-text-secondary shrink-0 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-40 pb-5" : "max-h-0"
+        }`}
+      >
+        <p className="text-sm text-text-secondary leading-relaxed">{answer}</p>
+      </div>
+    </div>
+  );
+}
+
+export function ContactContent() {
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "submitting" | "success"
+  >("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("submitting");
+
+    setTimeout(() => {
+      setFormStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => setFormStatus("idle"), 3000);
+    }, 1000);
+  };
+
+  return (
+    <>
+      {/* ==================== HERO ==================== */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        {/* Dark gradient background — matches Services & About pages */}
+        <div className="absolute inset-0 indigo-gradient -z-10" />
+
+        {/* Geometric mesh pattern overlay */}
+        <div className="absolute inset-0 -z-10 opacity-[0.04]">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="contact-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#contact-grid)" />
+          </svg>
+        </div>
+
+        {/* Glowing orbs */}
+        <div className="absolute inset-0 -z-10 opacity-30">
+          <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gold/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 left-2/3 w-48 h-48 bg-indigo-deep rounded-full blur-3xl opacity-50" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <Badge variant="light">Reach Out</Badge>
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-display)] text-white leading-tight">
+            Contact Us
+          </h1>
+          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Have a question or ready to get started? We&apos;d love to hear from
+            you.
+          </p>
+
+          {/* Trust indicators — inside hero */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+            {trustPoints.map((point) => (
+              <div
+                key={point.text}
+                className="flex items-center gap-2 text-white/60"
+              >
+                <point.icon size={16} className="text-gold" />
+                <span className="text-sm font-medium">{point.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== FORM + CONTACT INFO ==================== */}
+      <section className="py-10 lg:py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+            {/* Left Column: Form */}
+            <AnimatedSection className="w-full lg:w-3/5">
+              <div className="p-7 lg:p-10 rounded-3xl bg-surface border border-border shadow-md">
+                <h2 className="text-2xl font-[family-name:var(--font-display)] text-text-primary mb-6">
+                  Send us a message
+                </h2>
+
+                {formStatus === "success" ? (
+                  <div className="flex flex-col items-center justify-center py-10 text-center">
+                    <div className="w-14 h-14 bg-teal/10 text-teal rounded-full flex items-center justify-center mb-5">
+                      <CheckCircle2 size={28} />
+                    </div>
+                    <h3 className="text-xl font-[family-name:var(--font-display)] text-text-primary mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-text-secondary">
+                      Thank you for reaching out. We&apos;ll get back to you
+                      shortly.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-text-primary mb-2"
+                      >
+                        Full Name{" "}
+                        <span className="text-text-secondary/60">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-text-primary mb-2"
+                        >
+                          Email{" "}
+                          <span className="text-text-secondary/60">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="john@example.com"
+                          className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-medium text-text-primary mb-2"
+                        >
+                          Phone{" "}
+                          <span className="text-text-secondary/60">
+                            (optional)
+                          </span>
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+91 98765 43210"
+                          className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-text-primary mb-2"
+                      >
+                        Message{" "}
+                        <span className="text-text-secondary/60">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your needs..."
+                        className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)] resize-y"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-deep text-white font-medium text-sm hover:bg-indigo-dark transition-all duration-300 shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {formStatus === "submitting" ? (
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          Send Message
+                          <Send size={16} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </AnimatedSection>
+
+            {/* Right Column: Contact Info */}
+            <AnimatedSection className="w-full lg:w-2/5" delay={0.15}>
+              <h2 className="text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3">
+                Get in Touch
+              </h2>
+              <p className="text-text-secondary mb-8 leading-relaxed">
+                Prefer to reach out directly? Contact us through any of the
+                channels below.
+              </p>
+
+              <div className="space-y-4">
+                {/* Email Card */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-indigo-deep/15 hover:shadow-md transition-all duration-300">
+                  <div className="w-11 h-11 bg-indigo-deep/5 text-indigo-deep rounded-xl flex items-center justify-center shrink-0">
+                    <Mail size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                      Email
+                    </h3>
+                    <a
+                      href="mailto:hello@numerra.com"
+                      className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors"
+                    >
+                      hello@numerra.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone Card */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-gold/20 hover:shadow-md transition-all duration-300">
+                  <div className="w-11 h-11 bg-gold/10 text-gold-dark rounded-xl flex items-center justify-center shrink-0">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                      Phone
+                    </h3>
+                    <a
+                      href="tel:+919876543210"
+                      className="text-base font-medium text-text-primary hover:text-gold-dark transition-colors"
+                    >
+                      +91 98765 43210
+                    </a>
+                  </div>
+                </div>
+
+                {/* Office Card */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-teal/20 hover:shadow-md transition-all duration-300">
+                  <div className="w-11 h-11 bg-teal/10 text-teal rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                      Office
+                    </h3>
+                    <p className="text-base font-medium text-text-primary">
+                      Mumbai, Maharashtra, India
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Office Hours */}
+              <div className="mt-6 p-5 rounded-2xl bg-indigo-deep/5 border border-indigo-deep/10">
+                <h3 className="text-sm font-medium text-text-primary mb-2 flex items-center gap-2">
+                  <Clock size={16} className="text-indigo-deep" />
+                  Office Hours
+                </h3>
+                <div className="space-y-1 text-sm text-text-secondary">
+                  <p>Monday – Friday: 9:00 AM – 6:00 PM IST</p>
+                  <p>Saturday: 10:00 AM – 2:00 PM IST</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== FAQ SECTION ==================== */}
+      <section className="py-10 lg:py-14 bg-gradient-to-b from-bg to-surface">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-8">
+            <Badge variant="teal">Common Questions</Badge>
+            <h2 className="mt-5 text-3xl sm:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+              Frequently Asked Questions
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="p-6 lg:p-8 rounded-2xl bg-surface border border-border">
+              {faqs.map((faq) => (
+                <FAQItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ==================== BOTTOM CTA ==================== */}
+      <section className="py-10 lg:py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="relative overflow-hidden rounded-3xl indigo-gradient p-10 lg:p-16 text-center">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -translate-x-1/3 translate-y-1/3" />
+
+              <div className="relative z-10">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
+                  Ready to Simplify Your Finances?
+                </h2>
+                <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+                  Book a free consultation and discover how Numerra can help
+                  your business thrive.
+                </p>
+                <Link
+                  href="/contact"
+                  className="mt-6 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-indigo-deep font-semibold text-sm hover:bg-gold hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+                  id="contact-cta"
+                >
+                  Schedule a Call
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+    </>
+  );
+}
