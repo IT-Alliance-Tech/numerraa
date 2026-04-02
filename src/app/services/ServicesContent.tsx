@@ -116,9 +116,8 @@ export function ServicesContent() {
               <AnimatedSection key={service.id} delay={0.1}>
                 <div
                   id={service.id}
-                  className={`flex flex-col ${
-                    isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
-                  } gap-10 lg:gap-16 items-center scroll-mt-24`}
+                  className={`flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+                    } gap-10 lg:gap-16 items-center scroll-mt-24`}
                 >
                   {/* Visual */}
                   <div className="w-full lg:w-5/12">
@@ -135,7 +134,7 @@ export function ServicesContent() {
                       />
                       {/* Gradient Overlay for subtle blending */}
                       <div className="absolute inset-0 bg-gradient-to-tr from-indigo-deep/30 to-transparent pointer-events-none" />
-                      
+
                       {/* Icon Badge Overlay */}
                       <div className="absolute bottom-6 left-6 w-14 h-14 bg-surface/90 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg border border-white/10">
                         <service.icon size={28} className="text-gold" strokeWidth={1.5} />

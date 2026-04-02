@@ -99,3 +99,142 @@ h1, h2, h3, h4, h5, h6 {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-border), transparent);
 }
+
+/* ========== NEW: Redesign Utilities ========== */
+
+/* Large typographic watermark numbers */
+.watermark-num {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 15vw, 14rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-indigo-deep);
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Accent bar — vertical left border */
+.accent-bar-left {
+  position: relative;
+}
+.accent-bar-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 2px;
+}
+.accent-bar-left--indigo::before {
+  background: var(--color-indigo-deep);
+}
+.accent-bar-left--gold::before {
+  background: var(--color-gold);
+}
+.accent-bar-left--teal::before {
+  background: var(--color-teal);
+}
+
+/* Decorative diagonal pattern — uses pseudo-element to avoid overriding background */
+.diagonal-pattern {
+  position: relative;
+}
+.diagonal-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.03) 10px,
+    rgba(255,255,255,0.03) 20px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Service strip hover line */
+.service-strip {
+  position: relative;
+  overflow: hidden;
+}
+.service-strip::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-indigo-mid));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-strip:hover::after {
+  transform: scaleX(1);
+}
+
+/* Staggered grid helper */
+.stagger-offset {
+  transform: translateY(2rem);
+}
+
+@media (max-width: 1024px) {
+  .stagger-offset {
+    transform: none;
+  }
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-indigo-deep);
+  border-left: 3px solid var(--color-gold);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* FAQ accent on open */
+.faq-item-open {
+  border-left: 3px solid var(--color-indigo-mid);
+  padding-left: 1rem;
+  margin-left: -1rem;
+}
+
+/* Smooth reveal for service strips */
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle shimmer for gold accents */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-dark) 0%,
+    var(--color-gold-light) 50%,
+    var(--color-gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}

@@ -46,18 +46,23 @@ const trustPoints = [
   { icon: Sparkles, text: "98% Client Satisfaction" },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-border last:border-b-0">
+    <div className={`border-b border-border last:border-b-0 transition-all duration-300 ${isOpen ? 'faq-item-open' : ''}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-base font-medium text-text-primary group-hover:text-indigo-deep transition-colors pr-4">
-          {question}
-        </span>
+        <div className="flex items-center gap-4 pr-4">
+          <span className="text-xs font-[family-name:var(--font-body)] font-bold text-indigo-deep/30 shrink-0">
+            0{index + 1}
+          </span>
+          <span className="text-base font-medium text-text-primary group-hover:text-indigo-deep transition-colors">
+            {question}
+          </span>
+        </div>
         <ChevronDown
           size={20}
           className={`text-text-secondary shrink-0 transition-transform duration-300 ${
@@ -70,7 +75,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           isOpen ? "max-h-40 pb-5" : "max-h-0"
         }`}
       >
-        <p className="text-sm text-text-secondary leading-relaxed">{answer}</p>
+        <p className="text-sm text-text-secondary leading-relaxed pl-10">{answer}</p>
       </div>
     </div>
   );
@@ -109,7 +114,7 @@ export function ContactContent() {
     <>
       {/* ==================== HERO ==================== */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        {/* Dark gradient background — matches Services & About pages */}
+        {/* Dark gradient background */}
         <div className="absolute inset-0 indigo-gradient -z-10" />
 
         {/* Geometric mesh pattern overlay */}
@@ -157,15 +162,21 @@ export function ContactContent() {
       </section>
 
       {/* ==================== FORM + CONTACT INFO ==================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            {/* Left Column: Form */}
+            {/* Left Column: Form — with gold accent border */}
             <AnimatedSection className="w-full lg:w-3/5">
-              <div className="p-7 lg:p-10 rounded-3xl bg-surface border border-border shadow-md">
-                <h2 className="text-2xl font-[family-name:var(--font-display)] text-text-primary mb-6">
+              <div className="relative p-7 lg:p-10 rounded-3xl bg-surface border border-border shadow-md overflow-hidden">
+                {/* Gold accent bar on left */}
+                <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-gold via-gold/60 to-transparent hidden lg:block" />
+
+                <h2 className="text-2xl font-[family-name:var(--font-display)] text-text-primary mb-2">
                   Send us a message
                 </h2>
+                <p className="text-sm text-text-secondary mb-6">
+                  Fill in the details below and we&apos;ll get back to you within 24 hours.
+                </p>
 
                 {formStatus === "success" ? (
                   <div className="flex flex-col items-center justify-center py-10 text-center">
@@ -198,7 +209,7 @@ export function ContactContent() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                        className="w-full px-5 py-3.5 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
                       />
                     </div>
 
@@ -219,7 +230,7 @@ export function ContactContent() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                          className="w-full px-5 py-3.5 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
                         />
                       </div>
                       <div>
@@ -239,7 +250,7 @@ export function ContactContent() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
+                          className="w-full px-5 py-3.5 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)]"
                         />
                       </div>
                     </div>
@@ -260,14 +271,14 @@ export function ContactContent() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your needs..."
-                        className="w-full px-5 py-3 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)] resize-y"
+                        className="w-full px-5 py-3.5 rounded-xl border border-border bg-bg text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-indigo-deep/20 focus:border-indigo-deep/50 transition-all font-[family-name:var(--font-body)] resize-y"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={formStatus === "submitting"}
-                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-deep text-white font-medium text-sm hover:bg-indigo-dark transition-all duration-300 shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-deep text-white font-medium text-sm hover:bg-indigo-dark transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
                       {formStatus === "submitting" ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -283,79 +294,93 @@ export function ContactContent() {
               </div>
             </AnimatedSection>
 
-            {/* Right Column: Contact Info */}
+            {/* Right Column: Contact Info — Unified Surface */}
             <AnimatedSection className="w-full lg:w-2/5" delay={0.15}>
-              <h2 className="text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3">
-                Get in Touch
-              </h2>
-              <p className="text-text-secondary mb-8 leading-relaxed">
-                Prefer to reach out directly? Contact us through any of the
-                channels below.
-              </p>
-
-              <div className="space-y-4">
-                {/* Email Card */}
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-indigo-deep/15 hover:shadow-md transition-all duration-300">
-                  <div className="w-11 h-11 bg-indigo-deep/5 text-indigo-deep rounded-xl flex items-center justify-center shrink-0">
-                    <Mail size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:hello@numerra.com"
-                      className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors"
-                    >
-                      hello@numerra.com
-                    </a>
-                  </div>
+              <div className="lg:sticky lg:top-28 space-y-6">
+                <div>
+                  <h2 className="text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3">
+                    Get in Touch
+                  </h2>
+                  <p className="text-text-secondary mb-6 leading-relaxed">
+                    Prefer to reach out directly? Contact us through any of the
+                    channels below.
+                  </p>
                 </div>
 
-                {/* Phone Card */}
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-gold/20 hover:shadow-md transition-all duration-300">
-                  <div className="w-11 h-11 bg-gold/10 text-gold-dark rounded-xl flex items-center justify-center shrink-0">
-                    <Phone size={22} />
+                {/* Unified contact info card */}
+                <div className="rounded-2xl bg-surface border border-border overflow-hidden">
+                  {/* Email */}
+                  <div className="flex items-center gap-4 p-5 hover:bg-bg transition-colors duration-200 border-b border-border">
+                    <div className="w-11 h-11 bg-indigo-deep/5 text-indigo-deep rounded-xl flex items-center justify-center shrink-0">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-medium text-text-secondary mb-0.5 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                        Email
+                      </h3>
+                      <a
+                        href="mailto:hello@numerra.com"
+                        className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors"
+                      >
+                        hello@numerra.com
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
-                      Phone
-                    </h3>
-                    <a
-                      href="tel:+919876543210"
-                      className="text-base font-medium text-text-primary hover:text-gold-dark transition-colors"
-                    >
-                      +91 98765 43210
-                    </a>
-                  </div>
-                </div>
 
-                {/* Office Card */}
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-border hover:border-teal/20 hover:shadow-md transition-all duration-300">
-                  <div className="w-11 h-11 bg-teal/10 text-teal rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin size={22} />
+                  {/* Phone */}
+                  <div className="flex items-center gap-4 p-5 hover:bg-bg transition-colors duration-200 border-b border-border">
+                    <div className="w-11 h-11 bg-gold/10 text-gold-dark rounded-xl flex items-center justify-center shrink-0">
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-medium text-text-secondary mb-0.5 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                        Phone
+                      </h3>
+                      <a
+                        href="tel:+919876543210"
+                        className="text-base font-medium text-text-primary hover:text-gold-dark transition-colors"
+                      >
+                        +91 98765 43210
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-medium text-text-secondary mb-1 uppercase tracking-wider font-[family-name:var(--font-body)]">
-                      Office
-                    </h3>
-                    <p className="text-base font-medium text-text-primary">
-                      Mumbai, Maharashtra, India
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Office Hours */}
-              <div className="mt-6 p-5 rounded-2xl bg-indigo-deep/5 border border-indigo-deep/10">
-                <h3 className="text-sm font-medium text-text-primary mb-2 flex items-center gap-2">
-                  <Clock size={16} className="text-indigo-deep" />
-                  Office Hours
-                </h3>
-                <div className="space-y-1 text-sm text-text-secondary">
-                  <p>Monday – Friday: 9:00 AM – 6:00 PM IST</p>
-                  <p>Saturday: 10:00 AM – 2:00 PM IST</p>
-                  <p>Sunday: Closed</p>
+                  {/* Office */}
+                  <div className="flex items-center gap-4 p-5 hover:bg-bg transition-colors duration-200 border-b border-border">
+                    <div className="w-11 h-11 bg-teal/10 text-teal rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-medium text-text-secondary mb-0.5 uppercase tracking-wider font-[family-name:var(--font-body)]">
+                        Office
+                      </h3>
+                      <p className="text-base font-medium text-text-primary">
+                        Mumbai, Maharashtra, India
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Office Hours — same surface */}
+                  <div className="p-5 bg-indigo-deep/[0.02]">
+                    <h3 className="text-sm font-medium text-text-primary mb-3 flex items-center gap-2">
+                      <Clock size={16} className="text-indigo-deep" />
+                      Office Hours
+                    </h3>
+                    <div className="space-y-1.5 text-sm text-text-secondary">
+                      <div className="flex justify-between">
+                        <span>Monday – Friday</span>
+                        <span className="font-medium text-text-primary">9:00 AM – 6:00 PM IST</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Saturday</span>
+                        <span className="font-medium text-text-primary">10:00 AM – 2:00 PM IST</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Sunday</span>
+                        <span className="font-medium text-text-secondary">Closed</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -364,34 +389,50 @@ export function ContactContent() {
       </section>
 
       {/* ==================== FAQ SECTION ==================== */}
-      <section className="py-10 lg:py-14 bg-gradient-to-b from-bg to-surface">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8">
-            <Badge variant="teal">Common Questions</Badge>
-            <h2 className="mt-5 text-3xl sm:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
-              Frequently Asked Questions
-            </h2>
-          </AnimatedSection>
+      <section className="py-12 lg:py-20 bg-gradient-to-b from-bg to-surface">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
+            {/* Left — Heading */}
+            <AnimatedSection className="w-full lg:w-5/12">
+              <div className="lg:sticky lg:top-32">
+                <Badge variant="teal">Common Questions</Badge>
+                <h2 className="mt-5 text-3xl sm:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+                  Frequently Asked Questions
+                </h2>
+                <p className="mt-3 text-text-secondary leading-relaxed">
+                  Quick answers to help you understand how we work and what to expect.
+                </p>
 
-          <AnimatedSection delay={0.1}>
-            <div className="p-6 lg:p-8 rounded-2xl bg-surface border border-border">
-              {faqs.map((faq) => (
-                <FAQItem
-                  key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
-              ))}
-            </div>
-          </AnimatedSection>
+                {/* Decorative */}
+                <div className="mt-6 hidden lg:flex items-center gap-3">
+                  <div className="w-12 h-[2px] bg-teal/40 rounded-full" />
+                  <div className="w-2 h-2 rounded-full bg-teal/30" />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Right — FAQ items */}
+            <AnimatedSection delay={0.1} className="w-full lg:w-7/12">
+              <div className="p-6 lg:p-8 rounded-2xl bg-surface border border-border">
+                {faqs.map((faq, index) => (
+                  <FAQItem
+                    key={faq.question}
+                    question={faq.question}
+                    answer={faq.answer}
+                    index={index}
+                  />
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
       {/* ==================== BOTTOM CTA ==================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
-            <div className="relative overflow-hidden rounded-3xl indigo-gradient p-10 lg:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl indigo-gradient diagonal-pattern p-10 lg:p-16 text-center">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -translate-x-1/3 translate-y-1/3" />
 

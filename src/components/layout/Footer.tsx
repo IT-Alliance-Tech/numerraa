@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight, ChevronUp } from "lucide-react";
 
 const companyLinks = [
   { href: "/", label: "Home" },
@@ -18,28 +20,47 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-indigo-deep text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white font-bold text-sm font-[family-name:var(--font-body)]">
+    <footer className="relative bg-indigo-deep text-white overflow-hidden">
+      {/* Subtle decorative glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-16 lg:pt-20 pb-10">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Brand Column — Wider */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-sm font-[family-name:var(--font-body)] group-hover:bg-white/15 transition-colors duration-300">
                 N
               </div>
-              <span className="text-xl font-[family-name:var(--font-display)] text-white tracking-tight">
-                Numerra
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-[family-name:var(--font-display)] text-white tracking-tight">
+                  Numerra
+                </span>
+                <div className="w-1.5 h-1.5 rounded-full bg-gold/60" />
+              </div>
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
               Simplifying finance for growing businesses. Your trusted partner in
               accounting and compliance.
             </p>
+            {/* Mini CTA */}
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold-light transition-colors duration-200 group/cta"
+            >
+              Start a conversation
+              <ArrowUpRight size={14} className="transition-transform duration-200 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
+            </Link>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="text-xs font-[family-name:var(--font-body)] font-semibold tracking-widest uppercase text-white/40 mb-5">
+          {/* Company Column */}
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
               Company
             </h4>
             <ul className="space-y-3">
@@ -47,8 +68,9 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200"
+                    className="group/link inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition-all duration-200"
                   >
+                    <span className="w-0 group-hover/link:w-2 h-px bg-gold transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -56,9 +78,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-xs font-[family-name:var(--font-body)] font-semibold tracking-widest uppercase text-white/40 mb-5">
+          {/* Services Column */}
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
               Services
             </h4>
             <ul className="space-y-3">
@@ -66,8 +88,9 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200"
+                    className="group/link inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition-all duration-200"
                   >
+                    <span className="w-0 group-hover/link:w-2 h-px bg-gold transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -75,33 +98,39 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Get In Touch */}
-          <div>
-            <h4 className="text-xs font-[family-name:var(--font-body)] font-semibold tracking-widest uppercase text-white/40 mb-5">
+          {/* Get In Touch Column */}
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
               Get In Touch
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
                   href="mailto:hello@numerra.com"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors duration-200"
+                  className="group/contact flex items-center gap-3 text-sm text-white/55 hover:text-white transition-all duration-200"
                 >
-                  <Mail size={16} className="shrink-0" />
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
+                    <Mail size={14} className="shrink-0" />
+                  </div>
                   hello@numerra.com
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+919876543210"
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors duration-200"
+                  className="group/contact flex items-center gap-3 text-sm text-white/55 hover:text-white transition-all duration-200"
                 >
-                  <Phone size={16} className="shrink-0" />
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
+                    <Phone size={14} className="shrink-0" />
+                  </div>
                   +91 98765 43210
                 </a>
               </li>
               <li>
-                <span className="flex items-center gap-3 text-sm text-white/60">
-                  <MapPin size={16} className="shrink-0" />
+                <span className="flex items-center gap-3 text-sm text-white/55">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                    <MapPin size={14} className="shrink-0" />
+                  </div>
                   Mumbai, India
                 </span>
               </li>
@@ -110,10 +139,20 @@ export function Footer() {
         </div>
 
         {/* Divider + Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-center text-sm text-white/40">
+        <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[13px] text-white/30 font-[family-name:var(--font-body)]">
             © 2026 Numerra Consulting. All rights reserved.
           </p>
+          {/* Back to top */}
+          <button
+            onClick={() => typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="group/top inline-flex items-center gap-2 text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200"
+          >
+            Back to top
+            <div className="w-7 h-7 rounded-lg border border-white/10 flex items-center justify-center group-hover/top:border-white/20 group-hover/top:bg-white/5 transition-all duration-200">
+              <ChevronUp size={14} />
+            </div>
+          </button>
         </div>
       </div>
     </footer>

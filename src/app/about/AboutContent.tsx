@@ -19,10 +19,10 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Badge } from "@/components/ui/Badge";
 
 const stats = [
-  { icon: Users, value: "500+", label: "Clients Served", color: "text-indigo-deep" },
-  { icon: Clock, value: "10+", label: "Years Experience", color: "text-gold-dark" },
-  { icon: Building2, value: "50+", label: "Industries Covered", color: "text-teal" },
-  { icon: TrendingUp, value: "98%", label: "Client Retention", color: "text-indigo-deep" },
+  { value: "500+", label: "Clients Served", color: "text-white" },
+  { value: "10+", label: "Years Experience", color: "text-gold" },
+  { value: "50+", label: "Industries Covered", color: "text-white" },
+  { value: "98%", label: "Client Retention", color: "text-gold" },
 ];
 
 const foundations = [
@@ -31,30 +31,24 @@ const foundations = [
     title: "Our Mission",
     description:
       "To empower startups and growing businesses with reliable, transparent, and modern financial services that drive informed decision-making.",
-    color: "bg-indigo-deep/5",
     iconColor: "text-indigo-deep",
-    borderColor: "border-indigo-deep/10",
-    accent: "bg-indigo-deep",
+    accentColor: "bg-indigo-deep",
   },
   {
     icon: Eye,
     title: "Our Vision",
     description:
       "To become the most trusted financial partner for emerging businesses across India, setting new standards in accounting excellence.",
-    color: "bg-teal/5",
     iconColor: "text-teal",
-    borderColor: "border-teal/10",
-    accent: "bg-teal",
+    accentColor: "bg-teal",
   },
   {
     icon: Heart,
     title: "Our Values",
     description:
       "Integrity, precision, and client-first thinking guide everything we do. We believe great finance is the foundation of great business.",
-    color: "bg-gold/5",
     iconColor: "text-gold-dark",
-    borderColor: "border-gold/10",
-    accent: "bg-gold",
+    accentColor: "bg-gold",
   },
 ];
 
@@ -64,18 +58,21 @@ const whyChooseUs = [
     title: "Deep Expertise",
     description:
       "Over a decade of experience across industries, from SaaS startups to established SMEs. Our subject matter experts understand the nuances of your specific industry and regulatory landscape.",
+    num: "01",
   },
   {
     icon: UsersRound,
     title: "Dedicated Teams",
     description:
       "A qualified team of CAs, accountants, and compliance experts at your service. Personalized attention from consultants who treat your business growth as their own primary objective.",
+    num: "02",
   },
   {
     icon: Handshake,
     title: "Reliable Partnership",
     description:
       "We don't just crunch numbers — we become an extension of your business. A relationship built on radical transparency and a commitment to long-term sustainable growth.",
+    num: "03",
   },
 ];
 
@@ -84,7 +81,7 @@ export function AboutContent() {
     <>
       {/* ==================== HERO ==================== */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        {/* Dark gradient background — matches Services page */}
+        {/* Dark gradient background */}
         <div className="absolute inset-0 indigo-gradient -z-10" />
 
         {/* Geometric grid pattern overlay */}
@@ -125,12 +122,12 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ==================== OUR STORY ==================== */}
-      <section className="py-12 lg:py-16">
+      {/* ==================== OUR STORY — Editorial Overlap Layout ==================== */}
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-            {/* Visual */}
-            <AnimatedSection className="w-full lg:w-5/12">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center">
+            {/* Visual — extends into the text column */}
+            <AnimatedSection className="w-full lg:w-5/12 lg:relative lg:z-10">
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
                   <Image
@@ -157,55 +154,62 @@ export function AboutContent() {
               </div>
             </AnimatedSection>
 
-            {/* Content */}
-            <AnimatedSection className="w-full lg:w-7/12" delay={0.15}>
-              <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-6">
-                Our Story
-              </h2>
-              <div className="space-y-4 text-text-secondary leading-relaxed">
-                <p>
-                  Numerra Consulting was founded with a simple belief: every
-                  growing business deserves access to world-class financial
-                  expertise, without the complexity and overhead of traditional
-                  firms.
-                </p>
-                <p>
-                  What began as a small practice serving local startups has
-                  grown into a trusted consulting firm supporting hundreds of
-                  businesses across India. Our approach combines deep domain
-                  knowledge with modern tools and processes.
-                </p>
-                <p>
-                  Today, Numerra serves a diverse portfolio of clients — from
-                  bootstrapped founders to well-funded startups — all united by
-                  a need for clarity, compliance, and financial confidence.
-                </p>
+            {/* Content — overlaps the image slightly */}
+            <AnimatedSection className="w-full lg:w-7/12 lg:-ml-12 lg:relative lg:z-20" delay={0.15}>
+              <div className="lg:bg-bg/95 lg:backdrop-blur-sm lg:rounded-3xl lg:p-10 lg:pl-16 lg:shadow-lg lg:border lg:border-border/50">
+                <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-6">
+                  Our Story
+                </h2>
+                <div className="space-y-4 text-text-secondary leading-relaxed">
+                  <p>
+                    Numerra Consulting was founded with a simple belief: every
+                    growing business deserves access to world-class financial
+                    expertise, without the complexity and overhead of traditional
+                    firms.
+                  </p>
+
+                  {/* Pull Quote */}
+                  <div className="pull-quote">
+                    Every growing business deserves world-class financial expertise.
+                  </div>
+
+                  <p>
+                    What began as a small practice serving local startups has
+                    grown into a trusted consulting firm supporting hundreds of
+                    businesses across India. Our approach combines deep domain
+                    knowledge with modern tools and processes.
+                  </p>
+                  <p>
+                    Today, Numerra serves a diverse portfolio of clients — from
+                    bootstrapped founders to well-funded startups — all united by
+                    a need for clarity, compliance, and financial confidence.
+                  </p>
+                </div>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ==================== STATS BAR ==================== */}
-      <section className="py-10 lg:py-12">
+      {/* ==================== STATS BAR — Full-width Inline Strip ==================== */}
+      <section className="py-12 lg:py-16 bg-indigo-deep">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-4">
               {stats.map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className="group relative p-6 lg:p-8 rounded-2xl bg-surface border border-border hover:border-indigo-deep/15 hover:shadow-lg transition-all duration-300 text-center"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className={`w-10 h-10 rounded-xl bg-indigo-deep/5 flex items-center justify-center mx-auto mb-3 ${stat.color}`}>
-                    <stat.icon size={20} />
+                <div key={stat.label} className="flex items-center gap-4 lg:gap-6">
+                  <div className="text-center">
+                    <div className={`text-3xl lg:text-4xl font-[family-name:var(--font-display)] ${stat.color} mb-1`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-text-secondary font-medium">
-                    {stat.label}
-                  </div>
+                  {/* Gold divider — hide on last item */}
+                  {index < stats.length - 1 && (
+                    <div className="hidden lg:block w-px h-12 bg-white/10 ml-6" />
+                  )}
                 </div>
               ))}
             </div>
@@ -213,36 +217,45 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ==================== WHAT DRIVES US ==================== */}
-      <section className="py-12 lg:py-16 bg-gradient-to-b from-bg to-surface">
+      {/* ==================== WHAT DRIVES US — Full-width Stacked Bands ==================== */}
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-10">
+          <AnimatedSection className="text-center mb-14">
             <Badge variant="teal">Our Foundation</Badge>
             <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
               What Drives Us
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Full-width stacked items with left accent */}
+          <div className="space-y-0">
             {foundations.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div
-                  className={`h-full p-7 lg:p-8 rounded-2xl border ${item.borderColor} ${item.color} transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
-                >
-                  <div className="flex items-center gap-3 mb-5">
-                    <div
-                      className={`w-10 h-10 rounded-lg ${item.color} flex items-center justify-center`}
-                    >
-                      <item.icon size={22} className={item.iconColor} />
+                <div className={`group relative flex flex-col sm:flex-row items-start gap-6 sm:gap-8 py-10 lg:py-12 ${index !== foundations.length - 1 ? 'border-b border-border' : ''}`}>
+                  {/* Left accent bar */}
+                  <div className={`absolute left-0 top-10 lg:top-12 w-[3px] h-12 rounded-full ${item.accentColor} opacity-40 group-hover:opacity-100 group-hover:h-16 transition-all duration-500`} />
+
+                  {/* Icon */}
+                  <div className="pl-6 sm:pl-8 shrink-0">
+                    <div className={`w-14 h-14 rounded-2xl bg-${item.accentColor === 'bg-indigo-deep' ? 'indigo-deep' : item.accentColor === 'bg-teal' ? 'teal' : 'gold'}/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <item.icon size={28} className={item.iconColor} strokeWidth={1.5} />
                     </div>
-                    <div className={`h-[2px] w-8 rounded-full ${item.accent} opacity-30`} />
                   </div>
-                  <h3 className="text-xl font-[family-name:var(--font-display)] text-text-primary mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {item.description}
-                  </p>
+
+                  {/* Content */}
+                  <div className="pl-6 sm:pl-0 flex-grow max-w-2xl">
+                    <h3 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3 group-hover:text-indigo-deep transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-text-secondary leading-relaxed lg:text-lg">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Large index number on the right */}
+                  <span className="hidden lg:block text-7xl font-[family-name:var(--font-display)] text-text-primary/[0.04] leading-none shrink-0 self-center">
+                    0{index + 1}
+                  </span>
                 </div>
               </AnimatedSection>
             ))}
@@ -250,45 +263,68 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ==================== WHY CHOOSE US ==================== */}
-      <section className="py-12 lg:py-16">
+      {/* ==================== WHY CHOOSE US — Split Sidebar Layout ==================== */}
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-10">
-            <Badge variant="gold">Our Edge</Badge>
-            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
-              Why Choose Us
-            </h2>
-            <p className="mt-3 text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              More than accountants — we&apos;re strategic partners invested in
-              your success.
-            </p>
-          </AnimatedSection>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            {/* Left Sidebar — Sticky heading */}
+            <AnimatedSection className="w-full lg:w-5/12">
+              <div className="lg:sticky lg:top-32">
+                <Badge variant="gold">Our Edge</Badge>
+                <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+                  Why Choose Us
+                </h2>
+                <p className="mt-4 text-lg text-text-secondary leading-relaxed">
+                  More than accountants — we&apos;re strategic partners invested in
+                  your success.
+                </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="group h-full p-7 lg:p-8 rounded-2xl bg-surface border border-border hover:border-indigo-deep/20 hover:shadow-xl hover:shadow-indigo-deep/5 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
-                    <item.icon size={26} className="text-gold-dark" />
-                  </div>
-                  <h3 className="text-xl font-[family-name:var(--font-display)] text-text-primary mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {item.description}
-                  </p>
+                {/* Decorative element */}
+                <div className="mt-8 hidden lg:flex items-center gap-3">
+                  <div className="w-16 h-[2px] bg-gold rounded-full" />
+                  <div className="w-2 h-2 rounded-full bg-gold/40" />
+                  <div className="w-8 h-[2px] bg-gold/30 rounded-full" />
                 </div>
-              </AnimatedSection>
-            ))}
+              </div>
+            </AnimatedSection>
+
+            {/* Right Column — Stacked items with dividers */}
+            <div className="w-full lg:w-7/12 space-y-0">
+              {whyChooseUs.map((item, index) => (
+                <AnimatedSection key={item.title} delay={index * 0.12}>
+                  <div className={`group flex gap-5 py-8 lg:py-10 ${index !== whyChooseUs.length - 1 ? 'border-b border-border' : ''}`}>
+                    {/* Number + Icon */}
+                    <div className="shrink-0 flex flex-col items-center gap-3">
+                      <span className="text-xs font-[family-name:var(--font-body)] font-bold tracking-widest text-gold-dark/60">
+                        {item.num}
+                      </span>
+                      <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
+                        <item.icon size={24} className="text-gold-dark" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-xl lg:text-2xl font-[family-name:var(--font-display)] text-text-primary mb-3 group-hover:text-indigo-deep transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm lg:text-base text-text-secondary leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ==================== BOTTOM CTA ==================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
-            <div className="relative overflow-hidden rounded-3xl indigo-gradient p-10 lg:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl indigo-gradient diagonal-pattern p-10 lg:p-16 text-center">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -translate-x-1/3 translate-y-1/3" />
 
