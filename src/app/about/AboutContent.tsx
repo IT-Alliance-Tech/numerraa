@@ -122,12 +122,12 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ==================== OUR STORY — Editorial Overlap Layout ==================== */}
+      {/* ==================== OUR STORY — Classic Two Column Layout ==================== */}
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center">
-            {/* Visual — extends into the text column */}
-            <AnimatedSection className="w-full lg:w-5/12 lg:relative lg:z-10">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+            {/* Visual */}
+            <AnimatedSection className="w-full lg:w-5/12">
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
                   <Image
@@ -154,9 +154,9 @@ export function AboutContent() {
               </div>
             </AnimatedSection>
 
-            {/* Content — overlaps the image slightly */}
-            <AnimatedSection className="w-full lg:w-7/12 lg:-ml-12 lg:relative lg:z-20" delay={0.15}>
-              <div className="lg:bg-bg/95 lg:backdrop-blur-sm lg:rounded-3xl lg:p-10 lg:pl-16 lg:shadow-lg lg:border lg:border-border/50">
+            {/* Content */}
+            <AnimatedSection className="w-full lg:w-7/12" delay={0.15}>
+              <div className="flex flex-col justify-center">
                 <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-6">
                   Our Story
                 </h2>
