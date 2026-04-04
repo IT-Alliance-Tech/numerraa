@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight, BookOpen, Calculator, FileSpreadsheet, Lightbulb, Users, CheckCircle2 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Badge } from "@/components/ui/Badge";
+import { SovereignCTA } from "@/components/ui/SovereignCTA";
 
 const services = [
   {
@@ -108,7 +109,7 @@ export function ServicesContent() {
       </section>
 
       {/* ==================== SERVICE BLOCKS ==================== */}
-      <section className="py-20 lg:py-28">
+      <section className="pt-20 pb-4 lg:pt-28 lg:pb-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-16 lg:space-y-24">
           {services.map((service, index) => {
             const isReversed = index % 2 !== 0;
@@ -180,34 +181,14 @@ export function ServicesContent() {
       </section>
 
       {/* ==================== CUSTOM SOLUTION CTA ==================== */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bg via-surface to-gold/5 border border-border p-12 lg:p-20 text-center">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-deep/3 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute bottom-0 right-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl translate-x-1/3 translate-y-1/3" />
-
-              <div className="relative z-10">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
-                  Need a Custom Solution?
-                </h2>
-                <p className="mt-5 text-lg text-text-secondary max-w-xl mx-auto leading-relaxed">
-                  Every business is unique. Let&apos;s discuss how we can tailor
-                  our services to your specific needs.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-deep text-white font-semibold text-sm hover:bg-indigo-dark transition-all duration-300 shadow-xl shadow-indigo-deep/20 hover:shadow-2xl hover:-translate-y-0.5"
-                  id="services-cta"
-                >
-                  Let&apos;s Talk
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <SovereignCTA
+        badgeText="Your Needs, Our Strategy"
+        title="Need a Custom Solution?"
+        description="Every business is unique. Let's discuss how we can tailor our financial services to exactly match your operational needs."
+        buttonText="Let's Build Together"
+        buttonHref="/free-consultation"
+        className="pb-20 lg:pb-32 pt-0 lg:pt-0 relative mt-4 lg:mt-8"
+      />
     </>
   );
 }

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Badge } from "@/components/ui/Badge";
+import { SovereignCTA } from "@/components/ui/SovereignCTA";
 
 const stats = [
   { value: "500+", label: "Clients Served", color: "text-white" },
@@ -217,49 +218,72 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ==================== WHAT DRIVES US — Full-width Stacked Bands ==================== */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-14">
-            <Badge variant="teal">Our Foundation</Badge>
-            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
-              What Drives Us
-            </h2>
+      {/* ==================== WHAT DRIVES US — Editorial Split Layout ==================== */}
+      <section className="py-16 lg:py-0 overflow-hidden bg-surface">
+        <div className="flex flex-col lg:flex-row min-h-[800px]">
+          
+          {/* Left Side: Dramatic Image */}
+          <AnimatedSection className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full">
+            <div className="absolute inset-0">
+              <Image
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Architecture driving our foundation"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              {/* Overlay Gradients for readability */}
+              <div className="absolute inset-0 bg-indigo-deep/30 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-surface/20 lg:to-surface" />
+            </div>
+
+            {/* Title Overlay */}
+            <div className="absolute bottom-12 left-8 right-8 lg:bottom-20 lg:left-16 lg:right-16 z-10">
+              <Badge variant="light">Our Foundation</Badge>
+              <h2 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-display)] text-white leading-tight">
+                What Drives Us
+              </h2>
+            </div>
           </AnimatedSection>
 
-          {/* Full-width stacked items with left accent */}
-          <div className="space-y-0">
-            {foundations.map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className={`group relative flex flex-col sm:flex-row items-start gap-6 sm:gap-8 py-10 lg:py-12 ${index !== foundations.length - 1 ? 'border-b border-border' : ''}`}>
-                  {/* Left accent bar */}
-                  <div className={`absolute left-0 top-10 lg:top-12 w-[3px] h-12 rounded-full ${item.accentColor} opacity-40 group-hover:opacity-100 group-hover:h-16 transition-all duration-500`} />
+          {/* Right Side: Vertically Stacked Content */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 py-16 lg:px-24 lg:py-24 relative">
+            <div className="max-w-xl space-y-16">
+              {foundations.map((item, index) => {
+                const theme = [
+                  { lineBg: "bg-indigo-deep", iconBg: "bg-indigo-deep/10" },
+                  { lineBg: "bg-teal", iconBg: "bg-teal/10" },
+                  { lineBg: "bg-gold", iconBg: "bg-gold/10" },
+                ][index];
 
-                  {/* Icon */}
-                  <div className="pl-6 sm:pl-8 shrink-0">
-                    <div className={`w-14 h-14 rounded-2xl bg-${item.accentColor === 'bg-indigo-deep' ? 'indigo-deep' : item.accentColor === 'bg-teal' ? 'teal' : 'gold'}/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <item.icon size={28} className={item.iconColor} strokeWidth={1.5} />
+                return (
+                  <AnimatedSection key={item.title} delay={index * 0.15}>
+                    <div className="group relative">
+                      {/* Interactive Accent Line */}
+                      <div className={`absolute -left-6 lg:-left-12 top-0 w-[3px] h-full ${theme.lineBg} opacity-10`} />
+                      <div className={`absolute -left-6 lg:-left-12 top-0 w-[3px] h-8 ${theme.lineBg} transition-all duration-700 ease-out group-hover:h-full`} />
+
+                      {/* Header */}
+                      <div className="flex items-center gap-5 mb-5">
+                        <div className={`w-14 h-14 rounded-2xl ${theme.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                          <item.icon size={26} className={item.iconColor} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary group-hover:text-indigo-deep transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                      </div>
+                      
+                      {/* Body */}
+                      <p className="text-text-secondary leading-relaxed lg:text-lg pl-0 sm:pl-[76px]">
+                        {item.description}
+                      </p>
                     </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="pl-6 sm:pl-0 flex-grow max-w-2xl">
-                    <h3 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3 group-hover:text-indigo-deep transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-text-secondary leading-relaxed lg:text-lg">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Large index number on the right */}
-                  <span className="hidden lg:block text-7xl font-[family-name:var(--font-display)] text-text-primary/[0.04] leading-none shrink-0 self-center">
-                    0{index + 1}
-                  </span>
-                </div>
-              </AnimatedSection>
-            ))}
+                  </AnimatedSection>
+                );
+              })}
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -321,34 +345,14 @@ export function AboutContent() {
       </section>
 
       {/* ==================== BOTTOM CTA ==================== */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="relative overflow-hidden rounded-3xl indigo-gradient diagonal-pattern p-10 lg:p-16 text-center">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -translate-x-1/3 translate-y-1/3" />
-
-              <div className="relative z-10">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
-                  Let&apos;s Work Together
-                </h2>
-                <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-                  Ready to experience finance without the friction? We&apos;d
-                  love to hear from you.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-indigo-deep font-semibold text-sm hover:bg-gold hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-                  id="about-cta"
-                >
-                  Get in Touch
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* ==================== BOTTOM CTA ==================== */}
+      <SovereignCTA
+        badgeText="Next Steps"
+        title="Let's Work Together"
+        description="Ready to experience finance without the friction? We'd love to hear from you."
+        buttonText="Get in Touch"
+        buttonHref="/free-consultation"
+      />
     </>
   );
 }

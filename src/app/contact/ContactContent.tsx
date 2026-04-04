@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Badge } from "@/components/ui/Badge";
+import { SovereignCTA } from "@/components/ui/SovereignCTA";
 
 const faqs = [
   {
@@ -429,34 +430,14 @@ export function ContactContent() {
       </section>
 
       {/* ==================== BOTTOM CTA ==================== */}
-      <section className="py-12 lg:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="relative overflow-hidden rounded-3xl indigo-gradient diagonal-pattern p-10 lg:p-16 text-center">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -translate-x-1/3 translate-y-1/3" />
-
-              <div className="relative z-10">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
-                  Ready to Simplify Your Finances?
-                </h2>
-                <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-                  Book a free consultation and discover how Numerra can help
-                  your business thrive.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-indigo-deep font-semibold text-sm hover:bg-gold hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-                  id="contact-cta"
-                >
-                  Schedule a Call
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* ==================== BOTTOM CTA ==================== */}
+      <SovereignCTA
+        badgeText="Free Consultation"
+        title="Ready to Simplify Your Finances?"
+        description="Book a free consultation and discover how Numerra can help your business thrive."
+        buttonText="Schedule a Call"
+        buttonHref="/free-consultation"
+      />
     </>
   );
 }

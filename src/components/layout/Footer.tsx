@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowUpRight, ChevronUp } from "lucide-react";
+import Image from "next/image";
 
 const companyLinks = [
   { href: "/", label: "Home" },
@@ -33,16 +34,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand Column — Wider */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-sm font-[family-name:var(--font-body)] group-hover:bg-white/15 transition-colors duration-300">
-                N
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-[family-name:var(--font-display)] text-white tracking-tight">
-                  Numerra
-                </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-gold/60" />
-              </div>
+            <Link href="/" className="inline-flex items-center mb-6 group">
+              <Image
+                src="/logo.png"
+                alt="Numerra Logo"
+                width={354}
+                height={128}
+                className="w-auto h-9 md:h-11 brightness-0 invert opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+              />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
               Simplifying finance for growing businesses. Your trusted partner in
