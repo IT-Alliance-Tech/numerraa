@@ -19,8 +19,8 @@
   --color-border-light: #F5F5F4;
 
   /* Font Families */
-  --font-display: "DM Serif Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
 
   /* Spacing Scale */
   --spacing-section: 5rem;

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const dmSerif = DM_Serif_Display({
+const poppinsDisplay = Poppins({
   variable: "--font-display",
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
-const inter = Inter({
+const poppinsBody = Poppins({
   variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -47,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${inter.variable}`}>
+    <html lang="en" className={`${poppinsDisplay.variable} ${poppinsBody.variable}`}>
       <body className="antialiased">
         <Header />
         <main>{children}</main>
