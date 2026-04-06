@@ -43,7 +43,7 @@ export function Footer() {
                 className="w-auto h-9 md:h-11 brightness-0 invert opacity-90 transition-opacity duration-300 group-hover:opacity-100"
               />
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs mb-6">
               Simplifying finance for growing businesses. Your trusted partner in
               accounting and compliance.
             </p>
@@ -59,7 +59,7 @@ export function Footer() {
 
           {/* Company Column */}
           <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/60 mb-5 pb-2 border-b border-white/10">
               Company
             </h4>
             <ul className="space-y-3">
@@ -67,7 +67,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group/link inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition-all duration-200"
+                    className="group/link inline-flex items-center gap-2 text-sm text-white/90 hover:text-white transition-all duration-200"
                   >
                     <span className="w-0 group-hover/link:w-2 h-px bg-gold transition-all duration-300" />
                     {link.label}
@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Services Column */}
           <div className="lg:col-span-3">
-            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/60 mb-5 pb-2 border-b border-white/10">
               Services
             </h4>
             <ul className="space-y-3">
@@ -87,7 +87,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group/link inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition-all duration-200"
+                    className="group/link inline-flex items-center gap-2 text-sm text-white/90 hover:text-white transition-all duration-200"
                   >
                     <span className="w-0 group-hover/link:w-2 h-px bg-gold transition-all duration-300" />
                     {link.label}
@@ -99,14 +99,14 @@ export function Footer() {
 
           {/* Get In Touch Column */}
           <div className="lg:col-span-3">
-            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/30 mb-5 pb-2 border-b border-white/5">
+            <h4 className="text-[11px] font-[family-name:var(--font-body)] font-semibold tracking-[0.15em] uppercase text-white/60 mb-5 pb-2 border-b border-white/10">
               Get In Touch
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
                   href="mailto:hello@numerra.com"
-                  className="group/contact flex items-center gap-3 text-sm text-white/55 hover:text-white transition-all duration-200"
+                  className="group/contact flex items-center gap-3 text-sm text-white/90 hover:text-white transition-all duration-200"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
                     <Mail size={14} className="shrink-0" />
@@ -117,7 +117,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+919876543210"
-                  className="group/contact flex items-center gap-3 text-sm text-white/55 hover:text-white transition-all duration-200"
+                  className="group/contact flex items-center gap-3 text-sm text-white/90 hover:text-white transition-all duration-200"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
                     <Phone size={14} className="shrink-0" />
@@ -126,7 +126,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="flex items-center gap-3 text-sm text-white/55">
+                <span className="flex items-center gap-3 text-sm text-white/90">
                   <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                     <MapPin size={14} className="shrink-0" />
                   </div>
@@ -139,13 +139,13 @@ export function Footer() {
 
         {/* Divider + Copyright */}
         <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[13px] text-white/30 font-[family-name:var(--font-body)]">
+          <p className="text-[13px] text-white/80 font-[family-name:var(--font-body)]">
             © 2026 Numerra Consulting. All rights reserved.
           </p>
           {/* Back to top */}
           <button
             onClick={() => typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group/top inline-flex items-center gap-2 text-[13px] text-white/30 hover:text-white/60 transition-colors duration-200"
+            className="group/top inline-flex items-center gap-2 text-[13px] text-white/70 hover:text-white transition-colors duration-200"
           >
             Back to top
             <div className="w-7 h-7 rounded-lg border border-white/10 flex items-center justify-center group-hover/top:border-white/20 group-hover/top:bg-white/5 transition-all duration-200">

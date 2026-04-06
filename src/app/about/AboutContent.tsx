@@ -106,10 +106,10 @@ export function AboutContent() {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <Badge variant="light">Who We Are</Badge>
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-display)] text-white leading-tight">
+          <h1 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
             About Numerra
           </h1>
-          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-sm lg:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
             A consulting firm built on trust, expertise, and a passion for
             helping businesses grow.
           </p>
@@ -158,7 +158,7 @@ export function AboutContent() {
             {/* Content */}
             <AnimatedSection className="w-full lg:w-7/12" delay={0.15}>
               <div className="flex flex-col justify-center">
-                <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-6">
+                <h2 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary mb-6">
                   Our Story
                 </h2>
                 <div className="space-y-4 text-text-secondary leading-relaxed">
@@ -200,7 +200,7 @@ export function AboutContent() {
               {stats.map((stat, index) => (
                 <div key={stat.label} className="flex items-center gap-4 lg:gap-6">
                   <div className="text-center">
-                    <div className={`text-3xl lg:text-4xl font-[family-name:var(--font-display)] ${stat.color} mb-1`}>
+                    <div className={`text-2xl lg:text-3xl font-[family-name:var(--font-display)] ${stat.color} mb-1`}>
                       {stat.value}
                     </div>
                     <div className="text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">
@@ -240,7 +240,7 @@ export function AboutContent() {
             {/* Title Overlay */}
             <div className="absolute bottom-12 left-8 right-8 lg:bottom-20 lg:left-16 lg:right-16 z-10">
               <Badge variant="light">Our Foundation</Badge>
-              <h2 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-display)] text-white leading-tight">
+              <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
                 What Drives Us
               </h2>
             </div>
@@ -268,13 +268,13 @@ export function AboutContent() {
                         <div className={`w-14 h-14 rounded-2xl ${theme.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
                           <item.icon size={26} className={item.iconColor} strokeWidth={1.5} />
                         </div>
-                        <h3 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary group-hover:text-indigo-deep transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl font-[family-name:var(--font-display)] text-text-primary group-hover:text-indigo-deep transition-colors duration-300">
                           {item.title}
                         </h3>
                       </div>
                       
                       {/* Body */}
-                      <p className="text-text-secondary leading-relaxed lg:text-lg pl-0 sm:pl-[76px]">
+                      <p className="text-text-secondary leading-relaxed text-sm lg:text-base pl-0 sm:pl-[76px]">
                         {item.description}
                       </p>
                     </div>
@@ -295,10 +295,10 @@ export function AboutContent() {
             <AnimatedSection className="w-full lg:w-5/12">
               <div className="lg:sticky lg:top-32">
                 <Badge variant="gold">Our Edge</Badge>
-                <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+                <h2 className="mt-5 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
                   Why Choose Us
                 </h2>
-                <p className="mt-4 text-lg text-text-secondary leading-relaxed">
+                <p className="mt-4 text-sm lg:text-base text-text-secondary leading-relaxed">
                   More than accountants — we&apos;re strategic partners invested in
                   your success.
                 </p>
@@ -329,7 +329,7 @@ export function AboutContent() {
 
                     {/* Content */}
                     <div>
-                      <h3 className="text-xl lg:text-2xl font-[family-name:var(--font-display)] text-text-primary mb-3 group-hover:text-indigo-deep transition-colors duration-300">
+                      <h3 className="text-lg lg:text-xl font-[family-name:var(--font-display)] text-text-primary mb-3 group-hover:text-indigo-deep transition-colors duration-300">
                         {item.title}
                       </h3>
                       <p className="text-sm lg:text-base text-text-secondary leading-relaxed">

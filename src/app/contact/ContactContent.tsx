@@ -66,15 +66,13 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
         </div>
         <ChevronDown
           size={20}
-          className={`text-text-secondary shrink-0 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`text-text-secondary shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-40 pb-5" : "max-h-0"
-        }`}
+        className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-40 pb-5" : "max-h-0"
+          }`}
       >
         <p className="text-sm text-text-secondary leading-relaxed pl-10">{answer}</p>
       </div>
@@ -123,7 +121,7 @@ export function ContactContent() {
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="contact-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1"/>
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#contact-grid)" />

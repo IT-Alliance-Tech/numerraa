@@ -123,7 +123,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="mt-8 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-[family-name:var(--font-display)] text-text-primary leading-[1.08] tracking-tight"
+                className="mt-8 text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-[1.1] tracking-tight"
               >
                 Your Business Grows. We Handle the{" "}
                 <em className="gradient-text not-italic" style={{ fontStyle: "italic" }}>
@@ -136,7 +136,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="mt-6 text-base lg:text-lg text-text-secondary max-w-lg leading-relaxed"
+                className="mt-6 text-sm lg:text-base text-text-secondary max-w-lg leading-relaxed"
               >
                 From statutory compliance to strategic financial advisory, we
                 provide the intelligence your business needs to scale with
@@ -155,7 +155,7 @@ export default function HomePage() {
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-indigo-deep text-white font-[family-name:var(--font-body)] font-semibold text-xs tracking-widest uppercase hover:bg-indigo-dark transition-all duration-300 shadow-xl shadow-indigo-deep/20 hover:shadow-2xl hover:shadow-indigo-deep/30 hover:-translate-y-0.5"
                   id="hero-cta-primary"
                 >
-                  Get Started
+                  Book Consultation
                 </Link>
                 <Link
                   href="/services"
@@ -193,19 +193,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
             <div>
-              <p className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-white">100+</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">100+</p>
               <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Corporate Clients</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-white">500+</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">500+</p>
               <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Audits Led</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-gold">₹250Cr+</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-gold">₹250Cr+</p>
               <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Asset Portfolio Managed</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-white">Zero</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">Zero</p>
               <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Compliance Defaults</p>
             </div>
           </div>
@@ -217,17 +217,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Sovereign Staggered Layout for Compliance Cards */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-            
+
             {/* Left Anchor Column (Sticky) */}
             <div className="lg:w-[45%] flex flex-col">
               <div className="sticky top-32">
                 <AnimatedSection>
                   <Badge variant="gold">Did You Know?</Badge>
-                  <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+                  <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
                     Accounting Isn&apos;t Optional.{" "}
                     <span className="gradient-text">It&apos;s the Law.</span>
                   </h2>
-                  <p className="mt-4 text-lg text-text-secondary leading-relaxed mb-10">
+                  <p className="mt-4 text-sm lg:text-base text-text-secondary leading-relaxed mb-10">
                     Whether you&apos;re a freelancer, startup, or established enterprise
                     — Indian law requires you to maintain proper financial records.
                   </p>
@@ -251,7 +251,7 @@ export default function HomePage() {
                               {complianceCards[0].badge}
                             </span>
                           </div>
-                          <h3 className="text-2xl font-[family-name:var(--font-display)] text-white mb-4 leading-tight">
+                          <h3 className="text-xl font-[family-name:var(--font-display)] text-white mb-4 leading-tight">
                             {complianceCards[0].title}
                           </h3>
                           <p className="text-white/80 leading-relaxed text-sm">
@@ -271,8 +271,8 @@ export default function HomePage() {
               <div className="flex flex-col gap-6 lg:gap-8">
                 {complianceCards.filter((_, i) => i !== 0 && i % 2 !== 0).map((card, idx) => (
                   <AnimatedSection key={card.title} delay={0.2 + idx * 0.1}>
-                    <div 
-                      className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10" 
+                    <div
+                      className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10"
                       style={{ boxShadow: '0 20px 60px -15px rgba(7,2,53,0.05)' }}
                     >
                       <div className="flex items-center gap-4 mb-6">
@@ -293,13 +293,13 @@ export default function HomePage() {
                   </AnimatedSection>
                 ))}
               </div>
-              
+
               {/* Right staggered column (Items 3, 5) */}
               <div className="flex flex-col gap-6 lg:gap-8 lg:mt-16">
                 {complianceCards.filter((_, i) => i !== 0 && i % 2 === 0).map((card, idx) => (
                   <AnimatedSection key={card.title} delay={0.3 + idx * 0.1}>
-                    <div 
-                      className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10" 
+                    <div
+                      className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10"
                       style={{ boxShadow: '0 20px 60px -15px rgba(7,2,53,0.05)' }}
                     >
                       <div className="flex items-center gap-4 mb-6">
@@ -343,10 +343,10 @@ export default function HomePage() {
           {/* Section Header */}
           <AnimatedSection className="text-center mb-14 lg:mb-16">
             <Badge>What We Do</Badge>
-            <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
+            <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
               Comprehensive Financial Services
             </h2>
-            <p className="mt-4 text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 text-sm lg:text-base text-text-secondary leading-relaxed max-w-2xl mx-auto">
               Everything your business needs to stay compliant, profitable, and
               growth-ready.
             </p>
@@ -354,7 +354,7 @@ export default function HomePage() {
 
           {/* Interactive Sticky Media Split Layout */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-            
+
             {/* Left Side: Sticky Media Viewer */}
             <div className="w-full lg:w-5/12 h-[400px] lg:h-[600px] lg:sticky lg:top-32 rounded-[2rem] overflow-hidden bg-white shadow-2xl border border-border/50 relative">
               <AnimatePresence mode="wait">
@@ -376,9 +376,9 @@ export default function HomePage() {
                   {/* Subtle gradient so the image isn't too raw */}
                   <div className="absolute inset-0 bg-indigo-deep/5 mix-blend-multiply" />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent opacity-80" />
-                  
+
                   {/* Floating Icon corresponding to active service */}
-                  <motion.div 
+                  <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
@@ -409,22 +409,22 @@ export default function HomePage() {
 
                       <div className={`flex gap-6 lg:gap-8 transition-all duration-500 ${isActive ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-40 hover:opacity-70'}`}>
                         {/* Number */}
-                        <div className="shrink-0 text-3xl font-[family-name:var(--font-display)] text-gold-dark/60 pt-1">
+                        <div className="shrink-0 text-2xl font-[family-name:var(--font-display)] text-gold-dark/60 pt-1">
                           {service.num}
                         </div>
-                        
+
                         {/* Content */}
                         <div>
-                          <h3 className={`text-2xl lg:text-4xl font-[family-name:var(--font-display)] mb-4 transition-colors duration-500 ${isActive ? 'text-indigo-deep' : 'text-text-primary'}`}>
+                          <h3 className={`text-xl lg:text-3xl font-[family-name:var(--font-display)] mb-4 transition-colors duration-500 ${isActive ? 'text-indigo-deep' : 'text-text-primary'}`}>
                             {service.title}
                           </h3>
-                          
+
                           {/* Animated Description expansion on larger screens, just color fade on mobile */}
                           <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0 lg:max-h-40 lg:opacity-100'}`}>
-                            <p className="text-text-secondary leading-relaxed lg:text-lg max-w-xl">
+                            <p className="text-text-secondary leading-relaxed text-sm lg:text-base max-w-xl">
                               {service.description}
                             </p>
-                            
+
                             <div className={`mt-6 flex items-center gap-2 font-semibold tracking-wider text-sm uppercase transition-all duration-500 ${isActive ? 'text-gold opacity-100 translate-y-0' : 'text-transparent opacity-0 translate-y-4'}`}>
                               <Link href="/services" className="inline-flex items-center gap-2 hover:text-indigo-deep transition-colors">
                                 Explore <ArrowRight size={16} />
@@ -438,7 +438,7 @@ export default function HomePage() {
                 })}
               </div>
             </div>
-            
+
           </div>
 
           {/* View All */}

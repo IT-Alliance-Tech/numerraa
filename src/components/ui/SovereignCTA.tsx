@@ -35,16 +35,16 @@ export function SovereignCTA({
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md">
                 {badgeText}
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight mb-4 group-hover:scale-[1.02] transition-transform duration-700">
+              <h2 className="text-3xl sm:text-4xl lg:text-4xl font-[family-name:var(--font-display)] text-white leading-tight mb-4 group-hover:scale-[1.02] transition-transform duration-700">
                 {title}
               </h2>
-              <p className="text-lg text-white/70 max-w-xl mx-auto leading-relaxed mb-8">
+              <p className="text-sm lg:text-base text-white/70 max-w-xl mx-auto leading-relaxed mb-8">
                 {description}
               </p>
               <Link
                 href={buttonHref}
                 {...(buttonHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="relative inline-flex items-center gap-3 px-8 py-4 lg:px-10 lg:py-4 rounded-full bg-gold text-[#070235] font-bold text-sm tracking-wide overflow-hidden group/btn shadow-[0_0_40px_-10px_rgba(123,88,4,0.4)] transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(123,88,4,0.6)] hover:-translate-y-1"
+                className="relative w-auto inline-flex items-center gap-3 px-8 py-3.5 lg:px-10 rounded-full bg-gold text-[#070235] font-bold text-sm tracking-wide overflow-hidden group/btn shadow-[0_0_40px_-10px_rgba(123,88,4,0.4)] transition-all duration-300 hover:shadow-[0_0_60px_-10px_rgba(123,88,4,0.6)] hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {buttonText}

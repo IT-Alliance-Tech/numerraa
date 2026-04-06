@@ -41,14 +41,16 @@ export function ConsultationContent() {
             
             {/* Left Content */}
             <AnimatedSection className="w-full lg:w-5/12 flex flex-col justify-center lg:sticky lg:top-32">
-              <Badge variant="teal">COMPLIMENTARY SESSION</Badge>
+              <span className="self-start">
+                <Badge variant="teal">COMPLIMENTARY SESSION</Badge>
+              </span>
               
-              <h1 className="mt-6 text-5xl sm:text-6xl lg:text-[4rem] font-[family-name:var(--font-display)] text-indigo-deep leading-[1.1] tracking-tight">
+              <h1 className="mt-6 text-3xl sm:text-4xl lg:text-[3rem] font-[family-name:var(--font-display)] text-indigo-deep leading-[1.1] tracking-tight">
                 Strategy<br />
                 <span className="text-teal">Session</span>
               </h1>
               
-              <p className="mt-6 text-lg text-text-secondary leading-relaxed max-w-sm">
+              <p className="mt-6 text-sm lg:text-base text-text-secondary leading-relaxed max-w-sm">
                 Transform your business trajectory with personalized insights from industry experts.
               </p>
 
@@ -81,18 +83,11 @@ export function ConsultationContent() {
 
               {/* Footer Trust Indicator */}
               <div className="mt-12 flex items-center gap-4 pt-8 border-t border-border/50">
-                <div className="flex -space-x-3">
-                  {[...Array(4)].map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="w-10 h-10 rounded-full bg-indigo-deep border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
-                    >
-                      N
-                    </div>
-                  ))}
+                <div className="w-10 h-10 rounded-full bg-indigo-deep border-2 border-white flex items-center justify-center text-white text-[10px] font-bold shrink-0">
+                  N
                 </div>
                 <div className="text-sm font-semibold text-text-primary">
-                  <span className="text-indigo-deep font-bold">500+</span> businesses served
+                  Trusted by <span className="text-indigo-deep font-bold">500+</span> businesses
                 </div>
               </div>
             </AnimatedSection>
@@ -100,7 +95,7 @@ export function ConsultationContent() {
             {/* Right Content - Calendly Embed */}
             <AnimatedSection delay={0.2} className="w-full lg:w-7/12">
               <div className="mb-6">
-                <h2 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary">
+                <h2 className="text-xl lg:text-2xl font-[family-name:var(--font-display)] text-text-primary">
                   Book Your <span className="text-indigo-deep">Free Session</span>
                 </h2>
                 <p className="mt-2 text-text-secondary">

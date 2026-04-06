@@ -98,10 +98,10 @@ export function ServicesContent() {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <Badge variant="light">Our Expertise</Badge>
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-display)] text-white leading-tight">
+          <h1 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-display)] text-white leading-tight">
             Our Services
           </h1>
-          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-sm lg:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
             End-to-end financial services built for modern businesses. We handle
             the numbers so you can focus on growth.
           </p>
@@ -148,7 +148,7 @@ export function ServicesContent() {
                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-deep/5 text-xs font-[family-name:var(--font-body)] font-bold text-indigo-deep mb-4">
                       {service.num}
                     </span>
-                    <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary mb-4">
+                    <h2 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary mb-4">
                       {service.title}
                     </h2>
                     <p className="text-text-secondary leading-relaxed mb-8">
