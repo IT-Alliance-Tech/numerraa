@@ -12,7 +12,7 @@ const services = [
     id: "bookkeeping",
     num: "01",
     icon: BookOpen,
-    image: "/images/service_bookkeeping_1775100257285.png",
+    image: "/images/service_bookkeeping.png",
     title: "Bookkeeping",
     description:
       "Maintain clean, accurate financial records with our dedicated bookkeeping services. We handle day-to-day transaction recording, bank reconciliation, and financial reporting so you can focus on running your business.",
@@ -27,7 +27,7 @@ const services = [
     id: "accounting",
     num: "02",
     icon: Calculator,
-    image: "/images/service_accounting_1775100277375.png",
+    image: "/images/service_accounting.png",
     title: "Accounting",
     description:
       "Full-cycle accounting services tailored to your industry and business size. From chart of accounts setup to year-end financial statements, we provide comprehensive accounting support.",
@@ -42,7 +42,7 @@ const services = [
     id: "tds-gst",
     num: "03",
     icon: FileSpreadsheet,
-    image: "/images/service_tax_1775100295551.png",
+    image: "/images/service_tax.png",
     title: "TDS & GST Compliance",
     description:
       "Navigate India's complex tax landscape with confidence. Our experts ensure timely filing, accurate computation, and full compliance with TDS and GST regulations.",
@@ -57,7 +57,7 @@ const services = [
     id: "startup-advisory",
     num: "04",
     icon: Lightbulb,
-    image: "/images/service_startup_1775100365785.png",
+    image: "/images/service_startup.png",
     title: "Startup Advisory",
     description:
       "Strategic financial guidance for founders and early-stage companies. We help you set up the right financial foundation, plan fundraising, and make data-driven decisions.",
@@ -72,7 +72,7 @@ const services = [
     id: "outsourcing",
     num: "05",
     icon: Users,
-    image: "/images/service_outsourcing_1775100389693.png",
+    image: "/images/service_outsourcing.png",
     title: "Outsourcing Services",
     description:
       "Scale your finance operations without the overhead of a full in-house team. Our outsourcing solutions give you access to experienced professionals at a fraction of the cost.",

@@ -58,35 +58,35 @@ const services = [
   {
     num: "01",
     icon: BookOpen,
-    image: "/images/service_bookkeeping_1775100257285.png",
+    image: "/images/service_bookkeeping.png",
     title: "Bookkeeping",
     description: "Accurate, timely records so you always know where you stand.",
   },
   {
     num: "02",
     icon: Calculator,
-    image: "/images/service_accounting_1775100277375.png",
+    image: "/images/service_accounting.png",
     title: "Accounting",
     description: "Full-service accounting tailored to your business needs.",
   },
   {
     num: "03",
     icon: FileSpreadsheet,
-    image: "/images/service_tax_1775100295551.png",
+    image: "/images/service_tax.png",
     title: "TDS & GST Compliance",
     description: "Stress-free tax filing and regulatory compliance.",
   },
   {
     num: "04",
     icon: Lightbulb,
-    image: "/images/service_startup_1775100365785.png",
+    image: "/images/service_startup.png",
     title: "Startup Advisory",
     description: "Strategic financial guidance for early-stage companies.",
   },
   {
     num: "05",
     icon: Users,
-    image: "/images/service_outsourcing_1775100389693.png",
+    image: "/images/service_outsourcing.png",
     title: "Outsourcing",
     description: "Scale your finance team without the overhead.",
   },
@@ -176,8 +176,8 @@ export default function HomePage() {
             >
               <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-indigo-deep/10">
                 <Image
-                  src="/images/hero_sculpture.png"
-                  alt="Abstract sculptural form representing precision and structure"
+                  src="/images/hero_real.jpeg"
+                  alt="Real corporate business meeting consulting"
                   fill
                   priority
                   className="object-cover"
