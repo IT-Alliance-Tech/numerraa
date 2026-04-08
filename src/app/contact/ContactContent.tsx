@@ -98,15 +98,37 @@ export function ContactContent() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus("submitting");
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/hrudhay.2003@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          message: formData.message,
+          _subject: `New Lead from Numerra Website: ${formData.name}`,
+          _template: "table",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+
       setFormStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
-      setTimeout(() => setFormStatus("idle"), 3000);
-    }, 1000);
+      setTimeout(() => setFormStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again or contact us directly.");
+      setFormStatus("idle");
+    }
   };
 
   return (
