@@ -103,7 +103,7 @@ export function ContactContent() {
     setFormStatus("submitting");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/hrudhay.2003@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/Numerraconsulting@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
