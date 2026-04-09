@@ -107,7 +107,7 @@ export function ConsultationContent() {
               <div className="relative rounded-3xl overflow-hidden bg-white shadow-[0_20px_50px_-15px_rgba(7,2,53,0.1)] border border-border/50">
                 {mounted ? (
                   <InlineWidget
-                    url="https://calendly.com/hrudhay-2003/30min"
+                    url="https://calendly.com/numerraconsulting/30min"
                     styles={{
                       height: "700px",
                       width: "100%",
