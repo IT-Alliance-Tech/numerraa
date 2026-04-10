@@ -18,7 +18,7 @@ export function SovereignCTA({
   description,
   buttonText,
   buttonHref,
-  className = "pb-20 pt-8 lg:pb-32 lg:pt-12 relative mt-4 lg:mt-8", // Reduced top padding
+  className = "pb-12 pt-6 lg:pb-16 lg:pt-8 relative mt-2 lg:mt-4", // Reduced top padding
 }: SovereignCTAProps) {
   return (
     <section className={className}>
