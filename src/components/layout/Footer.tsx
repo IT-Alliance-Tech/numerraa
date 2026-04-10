@@ -105,24 +105,24 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:hello@numerra.com"
+                  href="mailto:numerraconsulting@gmail.com"
                   className="group/contact flex items-center gap-3 text-sm text-white/90 hover:text-white transition-all duration-200"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
                     <Mail size={14} className="shrink-0" />
                   </div>
-                  hello@numerra.com
+                  numerraconsulting@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918660625301"
                   className="group/contact flex items-center gap-3 text-sm text-white/90 hover:text-white transition-all duration-200"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/contact:bg-white/10 transition-colors duration-200">
                     <Phone size={14} className="shrink-0" />
                   </div>
-                  +91 98765 43210
+                  +91 86606 25301
                 </a>
               </li>
               <li>
