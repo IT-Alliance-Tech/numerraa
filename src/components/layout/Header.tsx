@@ -48,7 +48,7 @@ export function Header() {
             width={354}
             height={128}
             priority
-            className={`w-auto h-8 md:h-10 transition-all duration-300 ${
+            className={`w-auto h-10 md:h-14 transition-all duration-300 ${
               isDarkHero ? "brightness-0 invert opacity-90" : ""
             }`}
           />

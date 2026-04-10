@@ -183,7 +183,7 @@ export function ContactContent() {
       </section>
 
       {/* ==================== FORM + CONTACT INFO ==================== */}
-      <section className="py-12 lg:py-20">
+      <section className="py-8 lg:py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             {/* Left Column: Form — with gold accent border */}
@@ -410,7 +410,7 @@ export function ContactContent() {
       </section>
 
       {/* ==================== FAQ SECTION ==================== */}
-      <section className="py-12 lg:py-20 bg-gradient-to-b from-bg to-surface">
+      <section className="py-8 lg:py-12 bg-gradient-to-b from-bg to-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
             {/* Left — Heading */}

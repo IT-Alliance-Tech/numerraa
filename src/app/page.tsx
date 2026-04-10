@@ -58,35 +58,35 @@ const services = [
   {
     num: "01",
     icon: BookOpen,
-    image: "/images/service_bookkeeping.png",
+    image: "/images/Bookkeeping.jpg",
     title: "Bookkeeping",
     description: "Accurate, timely records so you always know where you stand.",
   },
   {
     num: "02",
     icon: Calculator,
-    image: "/images/service_accounting.png",
+    image: "/images/Accounting.jpg",
     title: "Accounting",
     description: "Full-service accounting tailored to your business needs.",
   },
   {
     num: "03",
     icon: FileSpreadsheet,
-    image: "/images/service_tax.png",
+    image: "/images/TDS-&-GST-Compliance.jpg",
     title: "TDS & GST Compliance",
     description: "Stress-free tax filing and regulatory compliance.",
   },
   {
     num: "04",
     icon: Lightbulb,
-    image: "/images/service_startup.png",
+    image: "/images/Startup Advisory.png",
     title: "Startup Advisory",
     description: "Strategic financial guidance for early-stage companies.",
   },
   {
     num: "05",
     icon: Users,
-    image: "/images/service_outsourcing.png",
+    image: "/images/Outsourcing Services.png",
     title: "Outsourcing",
     description: "Scale your finance team without the overhead.",
   },
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-gold/[0.04] rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-28 lg:pt-32 pb-16 lg:pb-24 w-full">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-28 lg:pt-32 pb-10 lg:pb-14 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column — Text */}
             <div>
@@ -176,11 +176,11 @@ export default function HomePage() {
             >
               <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-indigo-deep/10">
                 <Image
-                  src="/images/hero_real.jpeg"
-                  alt="Real corporate business meeting consulting"
+                  src="/images/hero_illustration.png"
+                  alt="Business growth and financial consulting illustration"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-contain p-4"
                 />
               </div>
             </motion.div>
@@ -213,7 +213,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== COMPLIANCE AWARENESS — Asymmetric Layout ==================== */}
-      <section className="py-20 lg:py-32" id="compliance">
+      <section className="py-12 lg:py-16" id="compliance">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Sovereign Staggered Layout for Compliance Cards */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -338,10 +338,10 @@ export default function HomePage() {
       </section>
 
       {/* ==================== SERVICES PREVIEW — Bento Mosaic ==================== */}
-      <section className="py-20 lg:py-32 bg-surface" id="services-preview">
+      <section className="py-12 lg:py-16 bg-surface" id="services-preview">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Section Header */}
-          <AnimatedSection className="text-center mb-14 lg:mb-16">
+          <AnimatedSection className="text-center mb-10 lg:mb-12">
             <Badge>What We Do</Badge>
             <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
               Comprehensive Financial Services
@@ -371,7 +371,7 @@ export default function HomePage() {
                     alt={services[activeService].title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-contain p-4"
                   />
                   {/* Subtle gradient so the image isn't too raw */}
                   <div className="absolute inset-0 bg-indigo-deep/5 mix-blend-multiply" />
