@@ -93,7 +93,7 @@ export function Header() {
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="https://login.vishnusandassociates.in/me/login"
+            href="https://www.numerraconsulting.in"
             target="_blank"
             rel="noopener noreferrer"
             className={`hidden md:inline-flex items-center justify-center px-4 py-2.5 rounded-full text-[13px] font-[family-name:var(--font-body)] font-semibold tracking-wide transition-all duration-300 border ${
@@ -175,7 +175,7 @@ export function Header() {
               })}
               <div className={`mt-2 pt-2 flex flex-col gap-2 border-t ${isDarkHero ? "border-white/10" : "border-border/60"}`}>
                 <a
-                  href="https://login.vishnusandassociates.in/me/login"
+                  href="https://www.numerraconsulting.in"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
