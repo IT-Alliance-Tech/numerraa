@@ -341,7 +341,7 @@ export function ContactContent() {
                       </h3>
                       <a
                         href="mailto:numerraconsulting@gmail.com"
-                        className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors"
+                        className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors break-all"
                       >
                         numerraconsulting@gmail.com
                       </a>
