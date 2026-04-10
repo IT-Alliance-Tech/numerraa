@@ -199,15 +199,15 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
             <div>
               <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">100+</p>
-              <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Corporate Clients</p>
+              <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Clients Handled</p>
             </div>
             <div>
-              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">500+</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">50+</p>
               <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Audits Led</p>
             </div>
             <div>
-              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-gold">₹250Cr+</p>
-              <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Asset Portfolio Managed</p>
+              <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-gold">₹50L</p>
+              <p className="mt-1 text-xs font-[family-name:var(--font-body)] tracking-widest uppercase text-white/50">Penalties Saved</p>
             </div>
             <div>
               <p className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-white">Zero</p>
@@ -229,8 +229,8 @@ export default function HomePage() {
                 <AnimatedSection immediate>
                   <Badge variant="gold">Did You Know?</Badge>
                   <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
-                    Accounting Isn&apos;t Optional.{" "}
-                    <span className="gradient-text">It&apos;s the Law.</span>
+                    Compliance Isn&apos;t Just Required.{" "}
+                    <span className="gradient-text">It&apos;s Your Advantage.</span>
                   </h2>
                   <p className="mt-4 text-sm lg:text-base text-text-secondary leading-relaxed mb-10">
                     Whether you&apos;re a freelancer, startup, or established enterprise
