@@ -340,10 +340,10 @@ export function ContactContent() {
                         Email
                       </h3>
                       <a
-                        href="mailto:hello@numerra.com"
+                        href="mailto:numerraconsulting@gmail.com"
                         className="text-base font-medium text-text-primary hover:text-indigo-deep transition-colors"
                       >
-                        hello@numerra.com
+                        numerraconsulting@gmail.com
                       </a>
                     </div>
                   </div>
@@ -358,10 +358,10 @@ export function ContactContent() {
                         Phone
                       </h3>
                       <a
-                        href="tel:+919876543210"
+                        href="tel:+918660625301"
                         className="text-base font-medium text-text-primary hover:text-gold-dark transition-colors"
                       >
-                        +91 98765 43210
+                        +91 86606 25301
                       </a>
                     </div>
                   </div>
