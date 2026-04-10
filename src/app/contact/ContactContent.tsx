@@ -42,7 +42,7 @@ const faqs = [
 ];
 
 const trustPoints = [
-  { icon: Shield, text: "Trusted by 500+ Businesses" },
+  { icon: Shield, text: "Trusted by 100+ businesses" },
   { icon: Clock, text: "Average 24-Hour Response Time" },
   { icon: Sparkles, text: "98% Client Satisfaction" },
 ];
@@ -376,7 +376,7 @@ export function ContactContent() {
                         Office
                       </h3>
                       <p className="text-base font-medium text-text-primary">
-                        Mumbai, Maharashtra, India
+                        Indiranagar, Bangalore, Karnataka
                       </p>
                     </div>
                   </div>
