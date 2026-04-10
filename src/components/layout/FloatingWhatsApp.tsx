@@ -18,14 +18,14 @@ export function FloatingWhatsApp() {
         href="https://wa.me/918660625301"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-[60px] h-[60px] bg-[#25D366] text-white rounded-full shadow-[0_8px_24px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_28px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300"
+        className="flex items-center justify-center w-[50px] h-[50px] bg-[#25D366] text-white rounded-full shadow-[0_8px_24px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_28px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300"
         aria-label="Chat with us on WhatsApp"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          width="32"
-          height="32"
+          width="26"
+          height="26"
           fill="currentColor"
           className="group-hover:scale-110 transition-transform duration-300"
         >
