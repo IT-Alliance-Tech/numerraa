@@ -124,7 +124,7 @@ export function AboutContent() {
       </section>
 
       {/* ==================== OUR STORY — Classic Two Column Layout ==================== */}
-      <section className="py-16 lg:py-24">
+      <section className="py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
             {/* Visual */}
@@ -193,7 +193,7 @@ export function AboutContent() {
       </section>
 
       {/* ==================== STATS BAR — Full-width Inline Strip ==================== */}
-      <section className="py-12 lg:py-16 bg-indigo-deep">
+      <section className="py-8 lg:py-12 bg-indigo-deep">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 lg:gap-4">
@@ -288,7 +288,7 @@ export function AboutContent() {
       </section>
 
       {/* ==================== WHY CHOOSE US — Split Sidebar Layout ==================== */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-bg to-surface">
+      <section className="py-10 lg:py-14 bg-gradient-to-b from-bg to-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             {/* Left Sidebar — Sticky heading */}

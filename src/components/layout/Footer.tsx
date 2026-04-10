@@ -40,7 +40,7 @@ export function Footer() {
                 alt="Numerra Logo"
                 width={354}
                 height={128}
-                className="w-auto h-9 md:h-11 brightness-0 invert opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+                className="w-auto h-10 md:h-14 brightness-0 invert opacity-90 transition-opacity duration-300 group-hover:opacity-100"
               />
             </Link>
             <p className="text-white/80 text-sm leading-relaxed max-w-xs mb-6">
