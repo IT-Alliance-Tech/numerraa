@@ -40,7 +40,7 @@ export function ConsultationContent() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
             
             {/* Left Content */}
-            <AnimatedSection className="w-full lg:w-5/12 flex flex-col justify-center lg:sticky lg:top-32">
+            <AnimatedSection className="w-full lg:w-5/12 flex flex-col justify-center lg:sticky lg:top-32" immediate>
               <span className="self-start">
                 <Badge variant="teal">COMPLIMENTARY SESSION</Badge>
               </span>
@@ -93,7 +93,7 @@ export function ConsultationContent() {
             </AnimatedSection>
 
             {/* Right Content - Calendly Embed */}
-            <AnimatedSection delay={0.2} className="w-full lg:w-7/12">
+            <AnimatedSection delay={0.2} className="w-full lg:w-7/12" immediate>
               <div className="mb-6">
                 <h2 className="text-xl lg:text-2xl font-[family-name:var(--font-display)] text-text-primary">
                   Book Your <span className="text-indigo-deep">Free Session</span>

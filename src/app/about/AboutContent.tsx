@@ -128,7 +128,7 @@ export function AboutContent() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
             {/* Visual */}
-            <AnimatedSection className="w-full lg:w-5/12">
+            <AnimatedSection className="w-full lg:w-5/12" immediate>
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
                   <Image
@@ -156,7 +156,7 @@ export function AboutContent() {
             </AnimatedSection>
 
             {/* Content */}
-            <AnimatedSection className="w-full lg:w-7/12" delay={0.15}>
+            <AnimatedSection className="w-full lg:w-7/12" delay={0.15} immediate>
               <div className="flex flex-col justify-center">
                 <h2 className="text-2xl lg:text-3xl font-[family-name:var(--font-display)] text-text-primary mb-6">
                   Our Story
