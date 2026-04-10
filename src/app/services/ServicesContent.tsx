@@ -114,7 +114,7 @@ export function ServicesContent() {
           {services.map((service, index) => {
             const isReversed = index % 2 !== 0;
             return (
-              <AnimatedSection key={service.id} delay={0.1}>
+              <AnimatedSection key={service.id} delay={0.1} immediate={index === 0}>
                 <div
                   id={service.id}
                   className={`flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
