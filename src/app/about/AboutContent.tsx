@@ -20,9 +20,9 @@ import { Badge } from "@/components/ui/Badge";
 import { SovereignCTA } from "@/components/ui/SovereignCTA";
 
 const stats = [
-  { value: "500+", label: "Clients Served", color: "text-white" },
+  { value: "100+", label: "Clients Served", color: "text-white" },
   { value: "10+", label: "Years Experience", color: "text-gold" },
-  { value: "50+", label: "Industries Covered", color: "text-white" },
+  { value: "250+", label: "Works Completed", color: "text-white" },
   { value: "98%", label: "Client Retention", color: "text-gold" },
 ];
 
@@ -132,7 +132,7 @@ export function AboutContent() {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/about_office_new.png"
                     alt="Numerra Modern Office"
                     fill
                     sizes="(max-width: 1024px) 100vw, 500px"
@@ -226,7 +226,7 @@ export function AboutContent() {
           <AnimatedSection className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full">
             <div className="absolute inset-0">
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                src="/images/about_foundation_new.png"
                 alt="Architecture driving our foundation"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
