@@ -56,6 +56,7 @@ const complianceCards = [
 
 const services = [
   {
+    id: "bookkeeping",
     num: "01",
     icon: BookOpen,
     image: "/images/Bookkeeping.jpg",
@@ -63,6 +64,7 @@ const services = [
     description: "Accurate, timely records so you always know where you stand.",
   },
   {
+    id: "accounting",
     num: "02",
     icon: Calculator,
     image: "/images/Accounting.jpg",
@@ -70,6 +72,7 @@ const services = [
     description: "Full-service accounting tailored to your business needs.",
   },
   {
+    id: "tds-gst",
     num: "03",
     icon: FileSpreadsheet,
     image: "/images/TDS-&-GST-Compliance.jpg",
@@ -77,6 +80,7 @@ const services = [
     description: "Stress-free tax filing and regulatory compliance.",
   },
   {
+    id: "startup-advisory",
     num: "04",
     icon: Lightbulb,
     image: "/images/Startup Advisory.png",
@@ -84,6 +88,7 @@ const services = [
     description: "Strategic financial guidance for early-stage companies.",
   },
   {
+    id: "outsourcing",
     num: "05",
     icon: Users,
     image: "/images/Outsourcing Services.png",
@@ -426,7 +431,7 @@ export default function HomePage() {
                             </p>
 
                             <div className={`mt-6 flex items-center gap-2 font-semibold tracking-wider text-sm uppercase transition-all duration-500 ${isActive ? 'text-gold opacity-100 translate-y-0' : 'text-transparent opacity-0 translate-y-4'}`}>
-                              <Link href="/services" className="inline-flex items-center gap-2 hover:text-indigo-deep transition-colors">
+                              <Link href={`/services#${service.id}`} className="inline-flex items-center gap-2 hover:text-indigo-deep transition-colors">
                                 Explore <ArrowRight size={16} />
                               </Link>
                             </div>
