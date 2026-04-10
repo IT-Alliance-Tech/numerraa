@@ -187,7 +187,7 @@ export function ContactContent() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             {/* Left Column: Form — with gold accent border */}
-            <AnimatedSection className="w-full lg:w-3/5">
+            <AnimatedSection className="w-full lg:w-3/5" immediate>
               <div className="relative p-7 lg:p-10 rounded-3xl bg-surface border border-border shadow-md overflow-hidden">
                 {/* Gold accent bar on left */}
                 <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-gold via-gold/60 to-transparent hidden lg:block" />
@@ -316,7 +316,7 @@ export function ContactContent() {
             </AnimatedSection>
 
             {/* Right Column: Contact Info — Unified Surface */}
-            <AnimatedSection className="w-full lg:w-2/5" delay={0.15}>
+            <AnimatedSection className="w-full lg:w-2/5" delay={0.15} immediate>
               <div className="lg:sticky lg:top-28 space-y-6">
                 <div>
                   <h2 className="text-3xl font-[family-name:var(--font-display)] text-text-primary mb-3">

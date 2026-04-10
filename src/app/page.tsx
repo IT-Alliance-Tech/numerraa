@@ -221,7 +221,7 @@ export default function HomePage() {
             {/* Left Anchor Column (Sticky) */}
             <div className="lg:w-[45%] flex flex-col">
               <div className="sticky top-32">
-                <AnimatedSection>
+                <AnimatedSection immediate>
                   <Badge variant="gold">Did You Know?</Badge>
                   <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-display)] text-text-primary leading-tight">
                     Accounting Isn&apos;t Optional.{" "}
@@ -234,7 +234,7 @@ export default function HomePage() {
                 </AnimatedSection>
 
                 {/* Featured Anchor Card */}
-                <AnimatedSection delay={0.1}>
+                <AnimatedSection delay={0.1} immediate>
                   {(() => {
                     const FeaturedIcon = complianceCards[0].icon;
                     return (
@@ -270,7 +270,7 @@ export default function HomePage() {
               {/* Left staggered column (Items 2, 4, 6) */}
               <div className="flex flex-col gap-6 lg:gap-8">
                 {complianceCards.filter((_, i) => i !== 0 && i % 2 !== 0).map((card, idx) => (
-                  <AnimatedSection key={card.title} delay={0.2 + idx * 0.1}>
+                  <AnimatedSection key={card.title} delay={0.2 + idx * 0.1} immediate>
                     <div
                       className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10"
                       style={{ boxShadow: '0 20px 60px -15px rgba(7,2,53,0.05)' }}
@@ -297,7 +297,7 @@ export default function HomePage() {
               {/* Right staggered column (Items 3, 5) */}
               <div className="flex flex-col gap-6 lg:gap-8 lg:mt-16">
                 {complianceCards.filter((_, i) => i !== 0 && i % 2 === 0).map((card, idx) => (
-                  <AnimatedSection key={card.title} delay={0.3 + idx * 0.1}>
+                  <AnimatedSection key={card.title} delay={0.3 + idx * 0.1} immediate>
                     <div
                       className="group p-8 rounded-3xl bg-white transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-indigo-deep/10"
                       style={{ boxShadow: '0 20px 60px -15px rgba(7,2,53,0.05)' }}
@@ -325,7 +325,7 @@ export default function HomePage() {
           </div>
 
           {/* Mobile compliance CTA */}
-          <AnimatedSection className="mt-10 text-center lg:hidden">
+          <AnimatedSection className="mt-10 text-center lg:hidden" immediate>
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gold/10 border border-gold/20">
               <Shield size={18} className="text-gold-dark" />
               <p className="text-sm font-medium text-gold-dark">
